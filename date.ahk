@@ -1,9 +1,6 @@
-; need to add support for:
-; 1-Jun-1990 
-; November 15th, 2002
-; July 1st, 2008
-; 23 March 09
-; Jul 04, 2005
+;Run this file, edit RunWait line as desired
+;for your formatting preferences
+
 
 #Persistent
 return
