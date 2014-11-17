@@ -1,3 +1,9 @@
+#date.py
+#date.py formatstring clipboard
+#example:
+#date.py YYYYMMDD "Jan 1st 2013"
+#   -> 20130101
+
 from sys import argv as argv
 from sys import exit as exit
 from time import sleep as sleep
@@ -47,8 +53,9 @@ if len(t) == 3:
         out = fmt.replace("YYYY",y)
         out = out.replace("MM",m)
         out = out.replace("DD",d)
-        out = out.replace("MONTH",months[int(m)])
-        out = out.replace("MON",months[int(m)][:3])
+        out = out.replace("MONTH",months[int(m)-1])
+        out = out.replace("MON",months[int(m)-1][:3])
+        out = out.replace("YY",y[2:])
         with open("date","w") as f:
             f.write(out)
         if(slp):
