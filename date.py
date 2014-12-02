@@ -21,6 +21,18 @@ months = ["January",
           "October",
           "November",
           "December",]
+french_months = ["janvier",
+          "février",
+          "mars",
+          "avril",
+          "mai",
+          "juin",
+          "juillet",
+          "août",
+          "septembre",
+          "octobre",
+          "novembre",
+          "décembre",]
 fixes = ["st", "nd", "rd", "th",
        "\n", "\r", "\t", ",",]
 
@@ -32,6 +44,8 @@ for i in range(len(months)):
     t = t.replace(months[i], "M" + str(i+1))
 for i in range(len(months)):
     t = t.replace(months[i][:3], "M" + str(i+1))
+for i in range(len(french_months)):
+    t = t.replace(french_months[i], "M" + str(i+1))
 for fix in fixes:
     t = t.replace(fix,"")
 t = t.replace("-"," ")
