@@ -8,6 +8,7 @@ from sys import argv as argv
 from sys import exit as exit
 from time import sleep as sleep
 import re
+import pyperclip
 slp = False
 count = 3
 months = ["January",
@@ -92,22 +93,22 @@ if True:
                 pass
 
     for e in t:
-      if(len(e) == 10):
-        patterns = ["(\d\d\d\d).(\d\d).(\d\d)",
-                    "(\d\d)/(\d\d)/(\d\d\d\d)",
-                    "(\d\d)\-(\d\d)\-(\d\d\d\d)"]
-        keys = [[1,2,3],
-               [3,1,2],
-               [3,1,2]]
-        for i in range(len(patterns)):
-          pattern = patterns[i]
-          key = keys[i]
-          found = re.search(pattern,e)
-          if found:
-            y = found.group(key[0])
-            m = found.group(key[1])
-            d = found.group(key[2])
-    
+  
+      patterns = ["(\d\d\d\d).(\d\d).(\d\d)",
+                  "(\d\d)/(\d\d)/(\d\d\d\d)",
+                  "(\d\d)\-(\d\d)\-(\d\d\d\d)"]
+      keys = [[1,2,3],
+             [3,1,2],
+             [3,1,2]]
+      for i in range(len(patterns)):
+        pattern = patterns[i]
+        key = keys[i]
+        found = re.search(pattern,e)
+        if found:
+          y = found.group(key[0])
+          m = found.group(key[1])
+          d = found.group(key[2])
+  
     if(y != "" and m != "" and d != ""):
         out = fmt.replace("YYYY",y)
         out = out.replace("MM",m)
@@ -115,9 +116,7 @@ if True:
         out = out.replace("MONTH",months[int(m)-1])
         out = out.replace("MON",months[int(m)-1][:3])
         out = out.replace("YY",y[2:])
-        with open("date","w") as f:
-            f.write(out)
-            print(out)
+        pyperclip.copy(out)
         #input()
         exit(0)
     else:
