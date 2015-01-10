@@ -35,8 +35,7 @@ french_months = ["janvier",
                  "novembre",
                  "décembre",]
 fixes = ["st", "nd", "rd", "th",
-         "\n", "\r", "\t", ",",
-         "."]
+         "\n", "\r", "\t", ","]
 
 fmt = argv[1]
 argstr = " ".join(argv[2:])
@@ -95,8 +94,10 @@ if True:
     for e in t:
       if(len(e) == 10):
         patterns = ["(\d\d\d\d).(\d\d).(\d\d)",
-                    "(\d\d)/(\d\d)/(\d\d\d\d)"]
+                    "(\d\d)/(\d\d)/(\d\d\d\d)",
+                    "(\d\d)\-(\d\d)\-(\d\d\d\d)"]
         keys = [[1,2,3],
+               [3,1,2],
                [3,1,2]]
         for i in range(len(patterns)):
           pattern = patterns[i]
