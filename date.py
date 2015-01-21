@@ -87,7 +87,7 @@ if True:
                 a = int(e)
                 if(a > 0):
                     print(e)
-                    d = e
+                    d = e.zfill(2)
                     t.remove(e)
             except:
                 pass
@@ -98,7 +98,7 @@ if True:
                   "(\d\d)/(\d\d)/(\d\d\d\d)",
                   "(\d\d)\-(\d\d)\-(\d\d\d\d)"]
       keys = [[1,2,3],
-             [3,1,2],
+             [3,2,1],
              [3,1,2]]
       for i in range(len(patterns)):
         pattern = patterns[i]
