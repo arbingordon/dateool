@@ -42,6 +42,8 @@ fmt = argv[1]
 argstr = " ".join(argv[2:])
 t = argstr
 t = t.strip()
+if t.find("https://www.dropbox.com/s/") != -1:
+  exit()
 print("\"" + t + "\"")
 
 for i in range(len(months)):
